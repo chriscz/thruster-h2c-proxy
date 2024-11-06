@@ -11,6 +11,9 @@ import (
 
 	"golang.org/x/crypto/acme"
 	"golang.org/x/crypto/acme/autocert"
+
+	"golang.org/x/net/http2"
+	"golang.org/x/net/http2/h2c"
 )
 
 type Server struct {
@@ -48,7 +51,7 @@ func (s *Server) Start() {
 	} else {
 		s.httpsServer = nil
 		s.httpServer = s.defaultHttpServer(httpAddress)
-		s.httpServer.Handler = s.handler
+		s.httpServer.Handler = h2c.NewHandler(s.handler, &http2.Server{})
 
 		go s.httpServer.ListenAndServe()
 
