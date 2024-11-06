@@ -1,4 +1,4 @@
-require_relative "lib/thruster/version"
+require_relative "lib/thruster_h2c_proxy/version"
 
 Gem::Specification.new do |s|
   s.name        = "thruster-h2c-proxy"
@@ -17,5 +17,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir[ "{lib}/**/*", "MIT-LICENSE", "README.md" ]
   s.bindir = "exe"
-  s.executables << "thrust"
+  s.executables << "thruster_h2c_proxy"
 end

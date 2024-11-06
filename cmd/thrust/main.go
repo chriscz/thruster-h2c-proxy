@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/basecamp/thruster/internal"
+	"github.com/skulos/thruster-h2c-proxy/internal"
 )
 
 func setLogger(level slog.Level) {

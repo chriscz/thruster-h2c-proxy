@@ -1,4 +1,4 @@
-module github.com/basecamp/thruster
+module github.com/skulos/thruster-h2c-proxy
 
 go 1.22.1
 

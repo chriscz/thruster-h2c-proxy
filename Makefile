@@ -9,7 +9,7 @@ build:
 dist:
 	@for platform in $(PLATFORMS); do \
 		for arch in $(ARCHITECTURES); do \
-			GOOS=$$platform GOARCH=$$arch go build -trimpath -o dist/thrust-$$platform-$$arch ./cmd/...; \
+			GOOS=$$platform GOARCH=$$arch go build -trimpath -o dist/thruster_h2c_proxy-$$platform-$$arch ./cmd/...; \
 		done \
 	done
 
