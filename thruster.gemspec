@@ -1,13 +1,13 @@
 require_relative "lib/thruster/version"
 
 Gem::Specification.new do |s|
-  s.name        = "thruster"
+  s.name        = "thruster-h2c-proxy"
   s.version     = Thruster::VERSION
-  s.summary     = "Zero-config HTTP/2 proxy"
-  s.description = "A zero-config HTTP/2 proxy for lightweight production deployments"
-  s.authors     = [ "Kevin McConnell" ]
-  s.email       = "kevin@37signals.com"
-  s.homepage    = "https://github.com/basecamp/thruster"
+  s.summary     = "HTTP/2 proxy with Cleartext"
+  s.description = "A fork of Basecamp Thruster but with H2C support"
+  s.authors     = [ "Hendre Hayman" ]
+  s.email       = "hendrehayman@gmail.com"
+  s.homepage    = "https://github.com/skulos/thruster-h2c-proxy"
   s.license     = "MIT"
 
   s.metadata = {
