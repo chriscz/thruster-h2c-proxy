@@ -34,7 +34,7 @@ func (p *UpstreamProcess) Run() (int, error) {
 		return 0, err
 	}
 
-	slog.Info("Command Started")
+	slog.Info("Command Started", "command", p.cmd.String(), "process", p.cmd.Process, "pid", p.cmd.Process, "process_state", p.cmd.ProcessState.String())
 	p.Started <- struct{}{}
 
 	slog.Info("Handling Signals")
