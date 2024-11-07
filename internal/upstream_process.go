@@ -22,17 +22,21 @@ func NewUpstreamProcess(name string, arg ...string) *UpstreamProcess {
 }
 
 func (p *UpstreamProcess) Run() (int, error) {
+	slog.Info("Running upstream process")
 	p.cmd.Stdin = os.Stdin
 	p.cmd.Stdout = os.Stdout
 	p.cmd.Stderr = os.Stderr
 
+	slog.Info("Starting command")
 	err := p.cmd.Start()
 	if err != nil {
 		return 0, err
 	}
 
+	slog.Info("Command Started")
 	p.Started <- struct{}{}
 
+	slog.Info("Handling Signals")
 	go p.handleSignals()
 	err = p.cmd.Wait()
 
