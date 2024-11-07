@@ -15,6 +15,7 @@ type UpstreamProcess struct {
 }
 
 func NewUpstreamProcess(name string, arg ...string) *UpstreamProcess {
+	slog.Info("Creating upstream process:", name, arg)
 	return &UpstreamProcess{
 		Started: make(chan struct{}, 1),
 		cmd:     exec.Command(name, arg...),
