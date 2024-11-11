@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"os/signal"
 	"syscall"
+	"time"
 )
 
 type UpstreamProcess struct {
@@ -37,7 +38,10 @@ func (p *UpstreamProcess) Run() (int, error) {
 	slog.Info("Command Started", "command", p.cmd.String(), "process", p.cmd.Process, "pid", p.cmd.Process, "process_state", p.cmd.ProcessState.String())
 	p.Started <- struct{}{}
 
-	slog.Info("Handling Signals")
+	slog.Info("Handling Signals in 30s")
+	time.Sleep(30 * time.Second)
+	slog.Info("Handling Signals now")
+
 	go p.handleSignals()
 	err = p.cmd.Wait()
 
